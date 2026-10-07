@@ -1,0 +1,9 @@
+{
+  "workbench.editorAssociations": {
+    "*.puml": "meetingHelper.plantumlPreview",
+    "*.plantuml": "meetingHelper.plantumlPreview",
+    "*.pu": "meetingHelper.plantumlPreview",
+    "*.wsd": "meetingHelper.plantumlPreview",
+    "*.iuml": "meetingHelper.plantumlPreview"
+  }
+}

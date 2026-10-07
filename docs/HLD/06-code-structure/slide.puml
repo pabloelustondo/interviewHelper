@@ -1,0 +1,28 @@
+@startuml
+title Code structure (two files)
+skinparam shadowing false
+skinparam wrapWidth 160
+top to bottom direction
+
+package "index.html" {
+  component "Buttons\n(Start / Good / Land it / Stop)" as buttons
+  component "Display\n(panel + debug box)" as display
+}
+
+package "app.js" {
+  component "startListening()" as start
+  component "tick()" as tick
+  component "setState()" as set
+  component "renderDebug()" as render
+  database "mic object" as mic
+}
+
+buttons -down-> start : click
+start -down-> tick : every 100 ms
+tick -right-> mic : read / write
+tick -down-> set
+tick -down-> render
+buttons -[hidden]right-> display
+set -up-> display
+render -up-> display
+@enduml

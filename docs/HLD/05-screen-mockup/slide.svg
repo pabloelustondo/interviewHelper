@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" font-family="Helvetica, Arial, sans-serif">
+  <rect width="900" height="520" fill="gold"/>
+  <text x="450" y="290" text-anchor="middle" font-size="90" font-weight="bold" fill="#000">LAND IT</text>
+  <rect x="12" y="12" width="300" height="110" rx="8" fill="#000" fill-opacity="0.6"/>
+  <g font-family="Menlo, monospace" font-size="16" fill="#fff">
+    <text x="26" y="40">mic:      listening</text>
+    <text x="26" y="62">speaking: speaking</text>
+    <text x="26" y="84">duration: 47.1s</text>
+    <text x="26" y="106">level:    0.085</text>
+  </g>
+  <g font-size="12">
+    <rect x="610" y="486" width="100" height="22" rx="3" fill="#eee" stroke="#777"/><text x="660" y="502" text-anchor="middle">Start Listening</text>
+    <rect x="716" y="486" width="44" height="22" rx="3" fill="#eee" stroke="#777"/><text x="738" y="502" text-anchor="middle">Good</text>
+    <rect x="766" y="486" width="60" height="22" rx="3" fill="#eee" stroke="#777"/><text x="796" y="502" text-anchor="middle">Land it</text>
+    <rect x="832" y="486" width="48" height="22" rx="3" fill="#eee" stroke="#777"/><text x="856" y="502" text-anchor="middle">Stop</text>
+  </g>
+  <g font-size="16" fill="#b00" font-weight="bold">
+    <text x="330" y="60">← debug display (top-left)</text>
+    <text x="450" y="390" text-anchor="middle">main panel (full screen)</text>
+    <text x="600" y="470" text-anchor="end">controls (bottom-right) →</text>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+@startuml
+title Roadmap: each layer stays independently testable
+skinparam shadowing false
+top to bottom direction
+
+rectangle "Hear\n(mic access)" as h #palegreen
+rectangle "Detect\n(speech / silence)" as d #palegreen
+rectangle "Time\n(turn timer + signal)" as t #palegreen
+rectangle "Identify speaker" as s #lightyellow
+rectangle "Transcribe" as tr #lightyellow
+rectangle "Understand" as u #lightgrey
+rectangle "Coach" as c #lightgrey
+
+h --> d
+d --> t
+t --> s
+s --> tr
+tr --> u
+u --> c
+
+legend bottom
+  green = working today
+  yellow = next experiments
+  grey = later, only after lower layers are reliable
+endlegend
+@enduml

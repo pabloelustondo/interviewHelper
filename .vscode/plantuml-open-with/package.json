@@ -1,0 +1,46 @@
+{
+  "name": "meetinghelper-plantuml-open-with",
+  "displayName": "Meeting Helper PlantUML Open With",
+  "description": "Opens PlantUML files with the PlantUML extension's diagram preview.",
+  "version": "0.1.0",
+  "publisher": "meetinghelper",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "extensionDependencies": [
+    "jebbs.plantuml"
+  ],
+  "activationEvents": [
+    "onCustomEditor:meetingHelper.plantumlPreview"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "meetingHelper.plantumlPreview",
+        "displayName": "PlantUML Preview",
+        "selector": [
+          {
+            "filenamePattern": "*.puml"
+          },
+          {
+            "filenamePattern": "*.plantuml"
+          },
+          {
+            "filenamePattern": "*.pu"
+          },
+          {
+            "filenamePattern": "*.wsd"
+          },
+          {
+            "filenamePattern": "*.iuml"
+          }
+        ],
+        "priority": "option"
+      }
+    ]
+  }
+}

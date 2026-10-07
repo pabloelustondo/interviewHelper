@@ -1,0 +1,26 @@
+@startuml
+title One 100 ms tick
+skinparam shadowing false
+skinparam wrapWidth 200
+
+participant "tick()" as K
+participant "AnalyserNode" as A
+participant "mic state" as M
+participant "UI" as U
+
+K -> A : read samples
+A --> K : samples
+K -> K : level = RMS(samples)
+alt level > 0.02
+  K -> M : lastVoice = now
+  opt no turn yet
+    K -> M : turnStart = now
+  end
+end
+K -> M : speaking = voice < 300 ms ago
+alt silent > 2.5 s
+  K -> M : turn over
+end
+K -> U : set color + text
+K -> U : update debug
+@enduml

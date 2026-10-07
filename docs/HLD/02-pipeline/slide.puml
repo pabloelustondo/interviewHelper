@@ -1,0 +1,22 @@
+@startuml
+title Audio pipeline (runs entirely in the browser)
+skinparam shadowing false
+top to bottom direction
+
+rectangle "Microphone" as mic
+rectangle "getUserMedia\n(permission)" as gum
+rectangle "AudioContext" as ctx
+rectangle "AnalyserNode\n(fftSize 2048)" as an
+rectangle "100 ms tick\nRMS level" as tick
+rectangle "Speech detection\n(threshold + hold)" as det
+rectangle "Turn timer" as timer
+rectangle "Panel color + text\nDebug display" as ui
+
+mic --> gum
+gum --> ctx : MediaStream
+ctx --> an
+an --> tick : time-domain samples
+tick --> det : level
+det --> timer : speaking?
+timer --> ui : seconds in turn
+@enduml

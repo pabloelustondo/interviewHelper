@@ -1,0 +1,20 @@
+@startuml
+title Speaking turn and display state
+skinparam shadowing false
+skinparam wrapWidth 160
+
+[*] --> Idle
+Idle : timer 0 s, GOOD
+
+state "Turn in progress" as Turn {
+  [*] --> Good
+  Good : 0-45 s, green GOOD
+  LandIt : 45-75 s, yellow LAND IT
+  Stop : over 75 s, red STOP
+  Good --> LandIt : 45 s
+  LandIt --> Stop : 75 s
+}
+
+Idle --> Turn : voice detected
+Turn --> Idle : silence 2.5 s
+@enduml
